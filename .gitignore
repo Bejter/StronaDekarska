@@ -44,3 +44,6 @@ desktop.ini
 # Pliki tymczasowe
 *.tmp
 *.temp
+
+# Vercel
+.vercel/
