@@ -1,6 +1,7 @@
 import Navbar from "../Components/Navbar";
 import heroRoof from "../assets/hero-roof.png";
 import MainAboutPage from "../Components/MainAboutPage";
+import MainGalleryPage from "../Components/MainGalleryPage";
 
 function MainPage() {
   return (
@@ -35,7 +36,13 @@ function MainPage() {
             <div className="mx-auto max-w-7xl">
                 <MainAboutPage />
             </div>
-            
+        </section>
+
+
+        <section className="relative z-20 min-h-screen bg-gray-950/95  px-6 py-15 text-white">
+            <div className="mx-auto max-w-7xl">
+                <MainGalleryPage />
+            </div>
         </section>
     </main>
   );
