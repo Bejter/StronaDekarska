@@ -1,5 +1,6 @@
 import Navbar from "../Components/Navbar";
 import heroRoof from "../assets/hero-roof.png";
+import MainAboutPage from "../Components/MainAboutPage";
 
 function MainPage() {
   return (
@@ -9,7 +10,7 @@ function MainPage() {
             <Navbar />
 
             <div className="relative z-10 mx-auto flex min-h-screen max-w-7xl items-center px-6 pt-20 lg:px-8">
-                <div className="flex max-w-xl flex-col h-150 items-start">
+                <div className="flex max-w-xl flex-col h-100 items-start">
                     <h1 className="text-left text-5xl font-bold uppercase leading-tight text-white lg:text-6xl">
                         Solidne dachy
                         <span className="block">na lata</span>
@@ -32,7 +33,7 @@ function MainPage() {
 
         <section className="relative z-20 min-h-screen bg-gray-950/95  px-6 py-24 text-white">
             <div className="mx-auto max-w-7xl">
-                <h2 className="text-4xl max-h-screen font-bold items-center text-center">O nas</h2>
+                <MainAboutPage />
             </div>
             
         </section>
