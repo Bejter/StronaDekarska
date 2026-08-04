@@ -2,6 +2,7 @@ import Navbar from "../Components/Navbar";
 import heroRoof from "../assets/hero-roof.png";
 import MainAboutPage from "../Components/MainAboutPage";
 import MainGalleryPage from "../Components/MainGalleryPage";
+import MainProcessPage from "../Components/MainProcessPage";
 
 function MainPage() {
   return (
@@ -42,6 +43,12 @@ function MainPage() {
         <section className="relative z-20 min-h-screen bg-gray-950/95  px-6 py-15 text-white">
             <div className="mx-auto max-w-7xl">
                 <MainGalleryPage />
+            </div>
+        </section>
+
+        <section className="relative z-20 min-h-screen bg-gray-950/95  px-6 py-15 text-white">
+            <div className="mx-auto max-w-7xl">
+                <MainProcessPage />
             </div>
         </section>
     </main>
