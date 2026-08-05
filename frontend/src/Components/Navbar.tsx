@@ -1,14 +1,14 @@
 function Navbar() {
-    const navigation = [
-        {label: "Strona główna", href: "#"},
-        {label: "O nas", href: "#o-nas"},
-        {label: "Oferta", href: "#oferta"},
-        {label: "Realizacje", href: "#realizacje"},
-        {label: "Opinie", href: "#opinie"},
-        {label: "Kontakt", href: "#kontakt"}
-    ];
+  const navigation = [
+    { label: "Strona główna", href: "#" },
+    { label: "O nas", href: "#o-nas" },
+    { label: "Oferta", href: "#oferta" },
+    { label: "Realizacje", href: "#realizacje" },
+    { label: "Opinie", href: "#opinie" },
+    { label: "Kontakt", href: "#kontakt" },
+  ];
 
-    return (
+  return (
     <header className="absolute inset-x-0 top-0 z-50 border-b border-white/10 bg-slate-950/30 backdrop-blur-sm">
       <nav className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 lg:px-8">
         <a href="#" className="flex flex-col">
@@ -50,7 +50,7 @@ function Navbar() {
         </button>
       </nav>
     </header>
-    );
+  );
 }
 
 export default Navbar;
