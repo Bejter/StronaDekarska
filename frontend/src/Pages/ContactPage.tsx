@@ -1,5 +1,4 @@
 import type { FormEvent } from "react";
-import { useState } from "react";
 
 import Navbar from "../Components/Navbar";
 import FooterComponent from "../Components/FooterComponent";
