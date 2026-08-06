@@ -3,7 +3,7 @@ function Navbar() {
     { label: "Strona główna", href: "/StronaGłówna" },
     { label: "O nas", href: "/Onas" },
     { label: "Realizacje", href: "/Realizacje" },
-    { label: "Kontakt", href: "#Kontakt" },
+    { label: "Kontakt", href: "/Kontakt" },
   ];
 
   return (
