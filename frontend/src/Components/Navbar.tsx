@@ -1,6 +1,6 @@
 function Navbar() {
   const navigation = [
-    { label: "Strona główna", href: "/2" },
+    { label: "Strona główna", href: "/" },
     { label: "O nas", href: "/Onas" },
     { label: "Realizacje", href: "/Realizacje" },
     { label: "Kontakt", href: "/Kontakt" },
@@ -9,7 +9,11 @@ function Navbar() {
   return (
     <header className="absolute inset-x-0 top-0 z-50 border-b border-white/10 bg-slate-950/30 backdrop-blur-sm">
       <nav className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 lg:px-8">
-        <a href="#" className="flex flex-col" aria-label="Paweł Talarczyk Dachy">
+        <a
+          href="#"
+          className="flex flex-col"
+          aria-label="Paweł Talarczyk Dachy"
+        >
           <span className="text-xl font-bold uppercase tracking-tight text-white">
             Paweł Talarczyk <span className="text-red-500">Dachy</span>
           </span>
