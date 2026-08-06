@@ -27,7 +27,7 @@ function MainAboutPage() {
 
         <div>
           <p className="text-lg leading-8 text-gray-300">
-            Dach Expert to zespół doświadczonych specjalistów, dla których dach
+            Paweł Talarczyk Dachy to zespół doświadczonych specjalistów, dla których dach
             to coś więcej niż konstrukcja — to ochrona, bezpieczeństwo i spokój
             na lata.
           </p>

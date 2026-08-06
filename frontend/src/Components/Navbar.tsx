@@ -9,9 +9,9 @@ function Navbar() {
   return (
     <header className="absolute inset-x-0 top-0 z-50 border-b border-white/10 bg-slate-950/30 backdrop-blur-sm">
       <nav className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 lg:px-8">
-        <a href="#" className="flex flex-col">
+        <a href="#" className="flex flex-col" aria-label="Paweł Talarczyk Dachy">
           <span className="text-xl font-bold uppercase tracking-tight text-white">
-            Dach <span className="text-red-500">Expert</span>
+            Paweł Talarczyk <span className="text-red-500">Dachy</span>
           </span>
 
           <span className="text-[9px] uppercase tracking-[0.3em] text-slate-400">
@@ -32,11 +32,11 @@ function Navbar() {
         </div>
 
         <a
-          href="tel:+48500800600"
+          href="tel:+48533983555"
           className="hidden items-center gap-3 text-sm font-bold text-white md:flex"
         >
           <span className="text-lg text-red-500">☎</span>
-          <span>500 800 600</span>
+          <span>533 983 555</span>
         </a>
 
         <button

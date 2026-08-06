@@ -27,10 +27,10 @@ function FooterComponent({ hideContactCta }: FooterComponentProps) {
 
             <div className="flex flex-col gap-4 sm:flex-row sm:items-center lg:flex-col lg:items-end">
               <a
-                href="tel:+48500800600"
+                href="tel:+48533983555"
                 className="text-3xl font-bold text-gray-950 transition-colors hover:text-red-600 md:text-4xl"
               >
-                500 800 600
+                533 983 555
               </a>
 
               <a
@@ -48,9 +48,13 @@ function FooterComponent({ hideContactCta }: FooterComponentProps) {
       <div className="bg-gray-950 px-6 pt-7 text-white lg:px-8">
         <div className="mx-auto grid max-w-7xl gap-12 pb-5 sm:grid-cols-2 lg:grid-cols-4">
           <div>
-            <a href="#strona-glowna" className="inline-flex flex-col">
+            <a
+              href="/"
+              className="inline-flex flex-col"
+              aria-label="Paweł Talarczyk Dachy"
+            >
               <span className="text-2xl font-bold uppercase tracking-tight">
-                Dach <span className="text-red-500">Expert</span>
+                Paweł Talarczyk <span className="text-red-500">Dachy</span>
               </span>
 
               <span className="text-[10px] uppercase tracking-[0.3em] text-gray-500">
@@ -89,38 +93,24 @@ function FooterComponent({ hideContactCta }: FooterComponentProps) {
 
             <nav className="mt-6 flex flex-col items-start gap-3">
               <a
-                href="#strona-glowna"
+                href="/"
                 className="text-sm text-gray-400 transition-colors hover:text-red-500"
               >
                 Strona główna
               </a>
 
               <a
-                href="#o-nas"
+                href="/Onas"
                 className="text-sm text-gray-400 transition-colors hover:text-red-500"
               >
                 O nas
               </a>
 
               <a
-                href="#oferta"
-                className="text-sm text-gray-400 transition-colors hover:text-red-500"
-              >
-                Oferta
-              </a>
-
-              <a
-                href="#realizacje"
+                href="/realizacje"
                 className="text-sm text-gray-400 transition-colors hover:text-red-500"
               >
                 Realizacje
-              </a>
-
-              <a
-                href="#opinie"
-                className="text-sm text-gray-400 transition-colors hover:text-red-500"
-              >
-                Opinie
               </a>
 
               <a
@@ -138,20 +128,20 @@ function FooterComponent({ hideContactCta }: FooterComponentProps) {
 
             <address className="mt-6 flex flex-col items-start gap-4 not-italic">
               <a
-                href="tel:+48500800600"
+                href="tel:+48533983555"
                 className="text-gray-400 transition-colors hover:text-red-500"
               >
-                500 800 600
+                533 983 555
               </a>
 
               <a
-                href="mailto:kontakt@dachexpert.pl"
+                href="mailto:biuro.talarczykp@gmail.com"
                 className="text-gray-400 transition-colors hover:text-red-500"
               >
-                kontakt@dachexpert.pl
+                biuro.talarczykp@gmail.com
               </a>
 
-              <p className="text-gray-400">Małopolska i okolice</p>
+              <p className="text-gray-400">Podłopień 64, 34-650 Tymbark</p>
             </address>
           </div>
           <div>
@@ -180,18 +170,17 @@ function FooterComponent({ hideContactCta }: FooterComponentProps) {
 
         <div className="border-t border-white/10">
           <div className="mx-auto flex max-w-7xl flex-col gap-5 py-3 text-sm text-gray-500 md:flex-row md:items-center md:justify-between">
-            <p>© {currentYear} Dach Expert. Wszelkie prawa zastrzeżone.</p>
+            <p>
+              © {currentYear} Paweł Talarczyk Dachy. Wszelkie prawa zastrzeżone.
+            </p>
 
             <div className="flex flex-wrap items-center gap-6">
-              <a
-                href="/polityka-prywatnosci"
-                className="transition-colors hover:text-red-500"
-              >
+              <a href="#" className="transition-colors hover:text-red-500">
                 Polityka prywatności
               </a>
 
               <a
-                href="#strona-glowna"
+                href="/"
                 aria-label="Wróć na górę strony"
                 className="flex h-10 w-10 items-center justify-center bg-red-600 text-lg text-white transition-colors hover:bg-red-700"
               >

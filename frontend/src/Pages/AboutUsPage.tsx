@@ -65,7 +65,7 @@ function AboutUsPage() {
               </h1>
 
               <p className="mt-7 max-w-2xl text-lg leading-8 text-gray-300">
-                Paweł Kalarchyk Dachy to 15 lat doświadczenia w realizacji prac
+                Paweł Talarczyk Dachy to 15 lat doświadczenia w realizacji prac
                 dekarskich i ciesielskich na terenie Krakowa i okolic.
               </p>
             </div>
