@@ -1,11 +1,9 @@
 function Navbar() {
   const navigation = [
-    { label: "Strona główna", href: "#" },
-    { label: "O nas", href: "#o-nas" },
-    { label: "Oferta", href: "#oferta" },
-    { label: "Realizacje", href: "#realizacje" },
-    { label: "Opinie", href: "#opinie" },
-    { label: "Kontakt", href: "#kontakt" },
+    { label: "Strona główna", href: "/StronaGłówna" },
+    { label: "O nas", href: "/Onas" },
+    { label: "Realizacje", href: "/Realizacje" },
+    { label: "Kontakt", href: "#Kontakt" },
   ];
 
   return (
