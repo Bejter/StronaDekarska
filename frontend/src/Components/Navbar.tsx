@@ -1,6 +1,6 @@
 function Navbar() {
   const navigation = [
-    { label: "Strona główna", href: "/StronaGłówna" },
+    { label: "Strona główna", href: "/2" },
     { label: "O nas", href: "/Onas" },
     { label: "Realizacje", href: "/Realizacje" },
     { label: "Kontakt", href: "/Kontakt" },
