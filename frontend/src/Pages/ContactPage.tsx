@@ -1,4 +1,5 @@
 import type { FormEvent } from "react";
+import { useState } from "react";
 
 import Navbar from "../Components/Navbar";
 import FooterComponent from "../Components/FooterComponent";
@@ -47,7 +48,6 @@ function ContactPage() {
       <Navbar />
 
       <main>
-        {/* HERO */}
         <section className="relative min-h-[65vh] overflow-hidden">
           <div className="grid min-h-[65vh] lg:grid-cols-2">
             <div className="relative z-10 flex items-end bg-gray-950 px-6 pb-20 pt-36 lg:px-8 lg:pb-24">
@@ -79,7 +79,6 @@ function ContactPage() {
           </div>
         </section>
 
-        {/* FORMULARZ */}
         <section
           className="bg-stone-100 px-6 py-20 text-gray-950 lg:px-8 lg:py-28"
           aria-labelledby="contact-form-title"
@@ -240,7 +239,6 @@ function ContactPage() {
               </form>
             </div>
 
-            {/* PANEL INFORMACYJNY */}
             <aside
               className="space-y-6 lg:pt-16"
               aria-label="Informacje kontaktowe"
@@ -303,14 +301,18 @@ function ContactPage() {
             </aside>
           </div>
         </section>
-
-        {/* OBSZAR DZIAŁANIA */}
-
-        {/* CO DALEJ */}
         <section
-          className="border-t border-white/10 px-6 py-20 lg:px-8 lg:py-24"
+          className="relative overflow-hidden border-t border-white/10 bg-slate-900 px-6 py-20 lg:px-8 lg:py-28"
           aria-labelledby="next-steps-title"
         >
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-0"
+          >
+            <div className="absolute -right-32 -top-32 h-96 w-96 rounded-full bg-red-600/5 blur-3xl" />
+
+            <div className="absolute bottom-0 left-0 h-px w-full bg-linear-to-r from-transparent via-white/10 to-transparent" />
+          </div>
           <div className="mx-auto max-w-7xl">
             <div className="text-center">
               <p className="text-sm font-semibold uppercase tracking-[0.2em] text-red-500">
@@ -343,8 +345,11 @@ function ContactPage() {
           </div>
         </section>
       </main>
-
-      <FooterComponent />
+      <div
+        aria-hidden="true"
+        className="h-1 bg-linear-to-r from-gray-950 via-red-600 to-gray-950"
+      />
+      <FooterComponent hideContactCta />
     </div>
   );
 }

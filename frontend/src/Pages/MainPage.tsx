@@ -55,8 +55,8 @@ function MainPage() {
         </div>
       </section>
 
-      <section className="relative z-20 min-h-screen bg-gray-950/95  px-6 py-15 text-white">
-        <div className="mx-auto max-w-7xl">
+      <section className="relative z-20 min-h-screen bg-gray-950/95 py-15 text-white">
+        <div>
           <MainProcessPage />
         </div>
       </section>

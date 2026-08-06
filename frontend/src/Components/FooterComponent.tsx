@@ -1,43 +1,49 @@
-function FooterComponent() {
+type FooterComponentProps = {
+  hideContactCta?: boolean;
+};
+
+function FooterComponent({ hideContactCta }: FooterComponentProps) {
   const currentYear = new Date().getFullYear();
 
   return (
     <footer>
-      <div className="bg-stone-100 px-6 py-7 text-gray-950 lg:px-8">
-        <div className="mx-auto flex max-w-7xl flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
-          <div className="max-w-2xl">
-            <p className="mb-3 border-l-2 border-red-600 pl-4 text-sm font-semibold uppercase tracking-[0.2em] text-red-600">
-              Masz pytania?
-            </p>
+      {!hideContactCta && (
+        <div className="bg-stone-100 px-6 py-7 text-gray-950 lg:px-8">
+          <div className="mx-auto flex max-w-7xl flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
+            <div className="max-w-2xl">
+              <p className="mb-3 border-l-2 border-red-600 pl-4 text-sm font-semibold uppercase tracking-[0.2em] text-red-600">
+                Masz pytania?
+              </p>
 
-            <h2 className="text-3xl font-bold leading-tight md:text-4xl">
-              Porozmawiajmy o Twoim dachu.
-            </h2>
+              <h2 className="text-3xl font-bold leading-tight md:text-4xl">
+                Porozmawiajmy o Twoim dachu.
+              </h2>
 
-            <p className="mt-4 max-w-xl leading-7 text-gray-600">
-              Opowiedz nam o planowanych pracach — przygotujemy jasną i
-              bezpłatną wycenę.
-            </p>
-          </div>
+              <p className="mt-4 max-w-xl leading-7 text-gray-600">
+                Opowiedz nam o planowanych pracach — przygotujemy jasną i
+                bezpłatną wycenę.
+              </p>
+            </div>
 
-          <div className="flex flex-col gap-4 sm:flex-row sm:items-center lg:flex-col lg:items-end">
-            <a
-              href="tel:+48500800600"
-              className="text-3xl font-bold text-gray-950 transition-colors hover:text-red-600 md:text-4xl"
-            >
-              500 800 600
-            </a>
+            <div className="flex flex-col gap-4 sm:flex-row sm:items-center lg:flex-col lg:items-end">
+              <a
+                href="tel:+48500800600"
+                className="text-3xl font-bold text-gray-950 transition-colors hover:text-red-600 md:text-4xl"
+              >
+                500 800 600
+              </a>
 
-            <a
-              href="/kontakt"
-              className="inline-flex items-center justify-center bg-red-600 px-7 py-4 text-sm font-semibold uppercase tracking-wider text-white transition-colors hover:bg-red-700"
-            >
-              Przejdź do kontaktu
-              <span className="ml-3 text-lg">→</span>
-            </a>
+              <a
+                href="/kontakt"
+                className="inline-flex items-center justify-center bg-red-600 px-7 py-4 text-sm font-semibold uppercase tracking-wider text-white transition-colors hover:bg-red-700"
+              >
+                Przejdź do kontaktu
+                <span className="ml-3 text-lg">→</span>
+              </a>
+            </div>
           </div>
         </div>
-      </div>
+      )}
 
       <div className="bg-gray-950 px-6 pt-7 text-white lg:px-8">
         <div className="mx-auto grid max-w-7xl gap-12 pb-5 sm:grid-cols-2 lg:grid-cols-4">
