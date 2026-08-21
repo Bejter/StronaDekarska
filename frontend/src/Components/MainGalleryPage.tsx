@@ -1,9 +1,9 @@
 import { useState } from "react";
 
-import beforePhoto from "../assets/GalleryPictures/Pic14.JPG";
-import afterPhoto from "../assets/GalleryPictures/Pic26.JPG";
-import galleryPhotoOne from "../assets/GalleryPictures/Pic1.jpg";
-import galleryPhotoTwo from "../assets/GalleryPictures/Pic2.JPG";
+import beforePhoto from "../assets/GalleryPictures/Pic14.webp";
+import afterPhoto from "../assets/GalleryPictures/Pic26.webp";
+import galleryPhotoOne from "../assets/GalleryPictures/Pic1.webp";
+import galleryPhotoTwo from "../assets/GalleryPictures/Pic2.webp";
 
 function MainGalleryPage() {
   const [sliderPosition, setSliderPosition] = useState(50);
@@ -16,7 +16,7 @@ function MainGalleryPage() {
             Nasze realizacje
           </p>
 
-          <h2 className="max-w-3xl text-4xl font-bold leading-tight text-white md:text-5xl">
+          <h2 className="max-w-3xl text-3xl font-bold leading-tight text-white sm:text-4xl md:text-5xl">
             Dachy, które mówią same za siebie.
           </h2>
         </div>
@@ -35,17 +35,25 @@ function MainGalleryPage() {
         </div>
       </div>
 
-      <div className="grid gap-3 lg:grid-cols-3">
+      <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
         <div className="relative h-105 w-full overflow-hidden bg-gray-900 lg:col-span-2 lg:h-155">
           <img
             src={afterPhoto}
             alt="Dach po wykonaniu prac"
+            width={1200}
+            height={900}
+            loading="lazy"
+            decoding="async"
             className="absolute inset-0 h-full w-full object-cover object-center"
           />
 
           <img
             src={beforePhoto}
             alt="Dach przed wykonaniem prac"
+            width={1200}
+            height={900}
+            loading="lazy"
+            decoding="async"
             className="absolute inset-0 h-full w-full object-cover object-center"
             style={{ clipPath: `inset(0 ${100 - sliderPosition}% 0 0)` }}
           />
@@ -92,6 +100,10 @@ function MainGalleryPage() {
             <img
               src={galleryPhotoOne}
               alt="Renowacja pokrycia dachowego"
+              width={1200}
+              height={900}
+              loading="lazy"
+              decoding="async"
               className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
             />
 
@@ -113,6 +125,10 @@ function MainGalleryPage() {
             <img
               src={galleryPhotoTwo}
               alt="Montaż elementów dachowych"
+              width={1200}
+              height={900}
+              loading="lazy"
+              decoding="async"
               className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
             />
 

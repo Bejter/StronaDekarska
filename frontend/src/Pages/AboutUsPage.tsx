@@ -1,8 +1,8 @@
 import Navbar from "../Components/Navbar";
 import FooterComponent from "../Components/FooterComponent";
 
-import heroImage from "../assets/GalleryPictures/Pic17.JPG";
-import historyImage from "../assets/GalleryPictures/Pic32.JPG";
+import heroImage from "../assets/GalleryPictures/Pic17.webp";
+import historyImage from "../assets/GalleryPictures/Pic32.webp";
 
 const values = [
   {
@@ -45,22 +45,26 @@ function AboutUsPage() {
       <Navbar />
 
       <main>
-        <section className="relative flex min-h-[75vh] items-end overflow-hidden">
+        <section className="relative flex min-h-[70svh] items-end overflow-hidden sm:min-h-[72vh]">
           <img
             src={heroImage}
             alt=""
+            width={900}
+            height={1200}
+            fetchPriority="high"
+            decoding="async"
             className="absolute inset-0 h-full w-full object-cover"
           />
 
           <div className="absolute inset-0 bg-linear-to-r from-gray-950 via-gray-950/85 to-gray-950/30" />
 
-          <div className="relative z-10 mx-auto w-full max-w-7xl px-6 pb-20 pt-36 lg:px-8 lg:pb-28">
+          <div className="relative z-10 mx-auto w-full max-w-7xl px-4 pb-14 pt-28 sm:px-6 sm:pb-20 sm:pt-36 lg:px-8 lg:pb-28">
             <div className="max-w-3xl">
               <p className="mb-5 border-l-2 border-red-600 pl-4 text-sm font-semibold uppercase tracking-[0.2em] text-red-500">
                 O nas
               </p>
 
-              <h1 className="text-4xl font-bold leading-tight sm:text-5xl lg:text-7xl">
+              <h1 className="text-3xl font-bold leading-tight min-[380px]:text-4xl sm:text-5xl lg:text-7xl">
                 Doświadczenie, które widać w każdym dachu.
               </h1>
 
@@ -74,18 +78,22 @@ function AboutUsPage() {
 
         {/* HISTORIA */}
         <section
-          className="px-6 py-20 lg:px-8 lg:py-28"
+          className="px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-28"
           aria-labelledby="historia-firmy"
         >
-          <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-2 lg:items-center lg:gap-20">
+          <div className="mx-auto grid max-w-7xl gap-8 sm:gap-12 lg:grid-cols-2 lg:items-center lg:gap-20">
             <div className="relative">
               <img
                 src={historyImage}
                 alt="Prace przy konstrukcji i pokryciu dachu"
-                className="h-96 w-full object-cover sm:h-136"
+                width={900}
+                height={1200}
+                loading="lazy"
+                decoding="async"
+                className="h-72 w-full object-cover sm:h-96 lg:h-136"
               />
 
-              <div className="absolute bottom-0 left-0 bg-red-600 px-7 py-6">
+              <div className="absolute bottom-0 left-0 bg-red-600 px-5 py-4 sm:px-7 sm:py-6">
                 <strong className="block text-4xl font-bold">15 lat</strong>
 
                 <span className="mt-1 block text-sm text-red-50">
@@ -144,7 +152,7 @@ function AboutUsPage() {
         </section>
 
         <section
-          className="bg-stone-100 px-6 py-20 text-gray-950 lg:px-8 lg:py-28"
+          className="bg-stone-100 px-4 py-16 text-gray-950 sm:px-6 sm:py-20 lg:px-8 lg:py-28"
           aria-labelledby="nasze-podejscie"
         >
           <div className="mx-auto max-w-7xl">
@@ -166,11 +174,11 @@ function AboutUsPage() {
               </p>
             </div>
 
-            <div className="mt-12 grid border-l border-t border-gray-300 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="mt-10 grid border-l border-t border-gray-300 sm:mt-12 sm:grid-cols-2 lg:grid-cols-4">
               {values.map((value) => (
                 <article
                   key={value.number}
-                  className="border-b border-r border-gray-300 p-7"
+                  className="border-b border-r border-gray-300 p-5 sm:p-7"
                 >
                   <span className="text-sm font-bold text-red-600">
                     {value.number}
@@ -188,7 +196,7 @@ function AboutUsPage() {
         </section>
 
         <section
-          className="px-6 py-20 lg:px-8 lg:py-28"
+          className="px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-28"
           aria-labelledby="zakres-uslug"
         >
           <div className="mx-auto max-w-7xl">
@@ -210,11 +218,11 @@ function AboutUsPage() {
               </p>
             </div>
 
-            <ol className="mt-12 grid border-l border-t border-white/10 sm:grid-cols-2 lg:grid-cols-3">
+            <ol className="mt-10 grid border-l border-t border-white/10 sm:mt-12 sm:grid-cols-2 lg:grid-cols-3">
               {services.map((service, index) => (
                 <li
                   key={service}
-                  className="flex min-h-40 flex-col justify-between border-b border-r border-white/10 p-7 transition-colors hover:bg-white/5"
+                  className="flex min-h-32 flex-col justify-between border-b border-r border-white/10 p-5 transition-colors hover:bg-white/5 sm:min-h-40 sm:p-7"
                 >
                   <span className="text-sm font-bold text-red-500">
                     {String(index + 1).padStart(2, "0")}

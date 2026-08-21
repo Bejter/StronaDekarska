@@ -8,14 +8,14 @@ function FooterComponent({ hideContactCta }: FooterComponentProps) {
   return (
     <footer>
       {!hideContactCta && (
-        <div className="bg-stone-100 px-6 py-7 text-gray-950 lg:px-8">
+        <div className="bg-stone-100 px-4 py-10 text-gray-950 sm:px-6 lg:px-8">
           <div className="mx-auto flex max-w-7xl flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
             <div className="max-w-2xl">
               <p className="mb-3 border-l-2 border-red-600 pl-4 text-sm font-semibold uppercase tracking-[0.2em] text-red-600">
                 Masz pytania?
               </p>
 
-              <h2 className="text-3xl font-bold leading-tight md:text-4xl">
+              <h2 className="text-2xl font-bold leading-tight sm:text-3xl md:text-4xl">
                 Porozmawiajmy o Twoim dachu.
               </h2>
 
@@ -28,7 +28,7 @@ function FooterComponent({ hideContactCta }: FooterComponentProps) {
             <div className="flex flex-col gap-4 sm:flex-row sm:items-center lg:flex-col lg:items-end">
               <a
                 href="tel:+48533983555"
-                className="text-3xl font-bold text-gray-950 transition-colors hover:text-red-600 md:text-4xl"
+                className="text-2xl font-bold text-gray-950 transition-colors hover:text-red-600 sm:text-3xl md:text-4xl"
               >
                 533 983 555
               </a>
@@ -45,8 +45,8 @@ function FooterComponent({ hideContactCta }: FooterComponentProps) {
         </div>
       )}
 
-      <div className="bg-gray-950 px-6 pt-7 text-white lg:px-8">
-        <div className="mx-auto grid max-w-7xl gap-12 pb-5 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="bg-gray-950 px-4 pt-10 text-white sm:px-6 lg:px-8">
+        <div className="mx-auto grid max-w-7xl gap-10 pb-8 sm:grid-cols-2 sm:gap-12 lg:grid-cols-4">
           <div>
             <a
               href="/"
@@ -100,7 +100,7 @@ function FooterComponent({ hideContactCta }: FooterComponentProps) {
               </a>
 
               <a
-                href="/Onas"
+                href="/o-nas"
                 className="text-sm text-gray-400 transition-colors hover:text-red-500"
               >
                 O nas
@@ -169,7 +169,7 @@ function FooterComponent({ hideContactCta }: FooterComponentProps) {
         </div>
 
         <div className="border-t border-white/10">
-          <div className="mx-auto flex max-w-7xl flex-col gap-5 py-3 text-sm text-gray-500 md:flex-row md:items-center md:justify-between">
+          <div className="mx-auto flex max-w-7xl flex-col gap-5 py-5 text-sm text-gray-500 md:flex-row md:items-center md:justify-between">
             <p>
               © {currentYear} Paweł Talarczyk Dachy. Wszelkie prawa zastrzeżone.
             </p>

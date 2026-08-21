@@ -1,4 +1,4 @@
-import aboutRoof from "../assets/Dachbg.jpg";
+import aboutRoof from "../assets/Dachbg.webp";
 
 function MainAboutPage() {
   return (
@@ -8,18 +8,22 @@ function MainAboutPage() {
           Poznaj FPH. U Paweł Talarczyk
         </p>
 
-        <h2 className="text-4xl font-bold leading-tight text-white md:text-5xl">
+        <h2 className="text-3xl font-bold leading-tight text-white sm:text-4xl md:text-5xl">
           Dach wykonany raz.
           <span className="block">Dach wykonany dobrze.</span>
         </h2>
       </div>
 
-      <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
+      <div className="grid gap-8 sm:gap-10 lg:grid-cols-2 lg:items-center lg:gap-12">
         <div className="relative">
           <img
             src={aboutRoof}
             alt="Przykładowa realizacja dachu"
-            className="h-80 w-full object-cover md:h-112.5"
+            width={1600}
+            height={720}
+            loading="lazy"
+            decoding="async"
+            className="h-64 w-full object-cover sm:h-80 md:h-112.5"
           />
 
           <div className="absolute left-0 top-0 h-20 w-1 bg-red-600" />
@@ -82,7 +86,7 @@ function MainAboutPage() {
           </div>
 
           <a
-            href="#kontakt"
+            href="/kontakt"
             className="mt-8 inline-block bg-red-600 px-7 py-4 text-sm font-semibold uppercase tracking-wider text-white transition-colors hover:bg-red-700"
           >
             Dowiedz się więcej
@@ -90,30 +94,30 @@ function MainAboutPage() {
         </div>
       </div>
 
-      <div className="mt-20 grid grid-cols-2 border-y border-white/10 md:grid-cols-4">
+      <div className="mt-12 grid grid-cols-2 border-y border-white/10 sm:mt-16 md:mt-20 md:grid-cols-4">
         <div className="border-b border-r border-white/10 px-4 py-8 md:border-b-0">
-          <strong className="block text-4xl font-bold text-white">15+</strong>
+          <strong className="block text-3xl font-bold text-white sm:text-4xl">15+</strong>
           <span className="mt-2 block text-xs uppercase tracking-wider text-gray-400">
             Lat doświadczenia
           </span>
         </div>
 
         <div className="border-b border-white/10 px-4 py-8 md:border-b-0 md:border-r">
-          <strong className="block text-4xl font-bold text-white">250+</strong>
+          <strong className="block text-3xl font-bold text-white sm:text-4xl">250+</strong>
           <span className="mt-2 block text-xs uppercase tracking-wider text-gray-400">
             Wykonanych dachów
           </span>
         </div>
 
         <div className="border-r border-white/10 px-4 py-8">
-          <strong className="block text-4xl font-bold text-white">10</strong>
+          <strong className="block text-3xl font-bold text-white sm:text-4xl">10</strong>
           <span className="mt-2 block text-xs uppercase tracking-wider text-gray-400">
             lat gwarancji
           </span>
         </div>
 
         <div className="px-4 py-8">
-          <strong className="block text-4xl font-bold text-white">100%</strong>
+          <strong className="block text-3xl font-bold text-white sm:text-4xl">100%</strong>
           <span className="mt-2 block text-xs uppercase tracking-wider text-gray-400">
             zaangażowania
           </span>

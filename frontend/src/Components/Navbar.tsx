@@ -7,9 +7,9 @@ function Navbar() {
 
   const navigation = [
     { label: "Strona główna", href: "/" },
-    { label: "O nas", href: "/Onas" },
-    { label: "Realizacje", href: "/Realizacje" },
-    { label: "Kontakt", href: "/Kontakt" },
+    { label: "O nas", href: "/o-nas" },
+    { label: "Realizacje", href: "/realizacje" },
+    { label: "Kontakt", href: "/kontakt" },
   ];
 
   useEffect(() => {
@@ -25,13 +25,13 @@ function Navbar() {
 
   return (
     <header className="absolute inset-x-0 top-0 z-50 border-b border-white/10 bg-slate-950/30 backdrop-blur-sm">
-      <nav className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 lg:px-8">
+      <nav className="mx-auto flex h-18 max-w-7xl items-center justify-between gap-3 px-4 sm:h-20 sm:px-6 lg:px-8">
         <Link
           to="/"
           className="flex flex-col"
           aria-label="Paweł Talarczyk Dachy — strona główna"
         >
-          <span className="text-xl font-bold uppercase tracking-tight text-white">
+          <span className="text-base font-bold uppercase tracking-tight text-white min-[380px]:text-lg sm:text-xl">
             Paweł Talarczyk <span className="text-red-500">Dachy</span>
           </span>
 
@@ -57,7 +57,7 @@ function Navbar() {
 
         <a
           href="tel:+48533983555"
-          className="hidden items-center gap-3 text-sm font-bold text-white md:flex"
+          className="hidden items-center gap-3 text-sm font-bold text-white lg:flex"
         >
           <span className="text-lg text-red-500">☎</span>
           <span>533 983 555</span>
@@ -69,7 +69,7 @@ function Navbar() {
           aria-expanded={isMenuOpen}
           aria-controls="mobile-menu"
           onClick={() => setIsMenuOpen((current) => !current)}
-          className="flex h-10 w-10 items-center justify-center border border-white/20 text-2xl text-white lg:hidden"
+          className="flex h-11 w-11 shrink-0 items-center justify-center border border-white/20 text-2xl text-white transition-colors hover:border-red-500 hover:text-red-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-500 lg:hidden"
         >
           <span aria-hidden="true">{isMenuOpen ? "×" : "☰"}</span>
         </button>
@@ -79,12 +79,12 @@ function Navbar() {
         id="mobile-menu"
         className={`overflow-hidden border-t border-white/10 bg-gray-950/98 transition-[max-height,opacity] duration-300 lg:hidden ${
           isMenuOpen
-            ? "max-h-[32rem] opacity-100"
+            ? "max-h-128 opacity-100"
             : "pointer-events-none max-h-0 opacity-0"
         }`}
       >
         <nav
-          className="mx-auto flex max-w-7xl flex-col px-6 py-4"
+          className="mx-auto flex max-w-7xl flex-col px-4 py-3 sm:px-6 sm:py-4"
           aria-label="Nawigacja mobilna"
         >
           {navigation.map((item) => {
@@ -96,7 +96,7 @@ function Navbar() {
                 to={item.href}
                 aria-current={isActive ? "page" : undefined}
                 onClick={() => setIsMenuOpen(false)}
-                className={`flex min-h-12 items-center border-b border-white/10 text-sm font-semibold uppercase tracking-wide transition-colors last:border-b-0 ${
+                className={`flex min-h-13 items-center border-b border-white/10 text-sm font-semibold uppercase tracking-wide transition-colors last:border-b-0 ${
                   isActive ? "text-red-500" : "text-white/85 hover:text-red-500"
                 }`}
               >

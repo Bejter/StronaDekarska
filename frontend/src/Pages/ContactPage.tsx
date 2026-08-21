@@ -3,7 +3,7 @@ import type { FormEvent } from "react";
 import Navbar from "../Components/Navbar";
 import FooterComponent from "../Components/FooterComponent";
 
-import contactHero from "../assets/GalleryPictures/Pic8.JPG";
+import contactHero from "../assets/GalleryPictures/Pic8.webp";
 
 const services = [
   "Dekarstwo",
@@ -49,13 +49,13 @@ function ContactPage() {
       <main>
         <section className="relative min-h-[65vh] overflow-hidden">
           <div className="grid min-h-[65vh] lg:grid-cols-2">
-            <div className="relative z-10 flex items-end bg-gray-950 px-6 pb-20 pt-36 lg:px-8 lg:pb-24">
+            <div className="relative z-10 flex items-end bg-gray-950 px-4 pb-14 pt-28 sm:px-6 sm:pb-20 sm:pt-36 lg:px-8 lg:pb-24">
               <div className="mx-auto w-full max-w-xl lg:ml-auto lg:mr-16">
                 <p className="mb-5 border-l-2 border-red-600 pl-4 text-sm font-semibold uppercase tracking-[0.2em] text-red-500">
                   Kontakt
                 </p>
 
-                <h1 className="text-4xl font-bold leading-tight sm:text-5xl lg:text-6xl">
+                <h1 className="text-3xl font-bold leading-tight min-[380px]:text-4xl sm:text-5xl lg:text-6xl">
                   Porozmawiajmy o Twoim dachu.
                 </h1>
 
@@ -70,6 +70,10 @@ function ContactPage() {
               <img
                 src={contactHero}
                 alt=""
+                width={900}
+                height={1200}
+                fetchPriority="high"
+                decoding="async"
                 className="absolute inset-0 h-full w-full object-cover"
               />
 
@@ -79,10 +83,10 @@ function ContactPage() {
         </section>
 
         <section
-          className="bg-stone-100 px-6 py-20 text-gray-950 lg:px-8 lg:py-28"
+          className="bg-stone-100 px-4 py-16 text-gray-950 sm:px-6 sm:py-20 lg:px-8 lg:py-28"
           aria-labelledby="contact-form-title"
         >
-          <div className="mx-auto grid max-w-7xl gap-14 lg:grid-cols-[1.25fr_0.75fr] lg:gap-20">
+          <div className="mx-auto grid max-w-7xl gap-10 sm:gap-14 lg:grid-cols-[1.25fr_0.75fr] lg:gap-20">
             <div>
               <p className="text-sm font-semibold uppercase tracking-[0.2em] text-red-600">
                 Napisz do nas
@@ -102,7 +106,7 @@ function ContactPage() {
 
               <form
                 onSubmit={handleSubmit}
-                className="mt-10 grid gap-6 sm:grid-cols-2"
+                className="mt-8 grid gap-5 sm:mt-10 sm:grid-cols-2 sm:gap-6"
               >
                 <div>
                   <label
@@ -242,7 +246,7 @@ function ContactPage() {
               className="space-y-6 lg:pt-16"
               aria-label="Informacje kontaktowe"
             >
-              <div className="border border-gray-200 bg-white p-7">
+              <div className="border border-gray-200 bg-white p-5 sm:p-7">
                 <span
                   className="relative flex h-14 w-14 items-center justify-center border border-gray-800 bg-gray-950 text-red-500 shadow-[4px_4px_0_#dc2626]"
                   aria-hidden="true"
@@ -269,7 +273,7 @@ function ContactPage() {
                 </p>
               </div>
 
-              <div className="border border-gray-200 bg-white p-7">
+              <div className="border border-gray-200 bg-white p-5 sm:p-7">
                 <span
                   className="relative flex h-14 w-14 items-center justify-center border border-gray-800 bg-gray-950 text-red-500 shadow-[4px_4px_0_#dc2626]"
                   aria-hidden="true"
@@ -301,7 +305,7 @@ function ContactPage() {
           </div>
         </section>
         <section
-          className="relative overflow-hidden border-t border-white/10 bg-slate-900 px-6 py-20 lg:px-8 lg:py-28"
+          className="relative overflow-hidden border-t border-white/10 bg-slate-900 px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-28"
           aria-labelledby="next-steps-title"
         >
           <div
@@ -326,7 +330,7 @@ function ContactPage() {
               </h2>
             </div>
 
-            <ol className="mt-12 grid gap-8 md:grid-cols-3">
+            <ol className="mt-10 grid gap-8 sm:mt-12 md:grid-cols-3">
               {contactSteps.map((step) => (
                 <li key={step.number} className="border-t border-white/15 pt-6">
                   <span className="text-4xl font-bold text-red-600">

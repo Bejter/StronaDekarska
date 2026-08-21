@@ -3,19 +3,19 @@ import { useState } from "react";
 import Navbar from "../Components/Navbar";
 import FooterComponent from "../Components/FooterComponent";
 
-import pic1 from "../assets/GalleryPictures/Pic1.jpg";
-import pic2 from "../assets/GalleryPictures/Pic2.JPG";
-import pic3 from "../assets/GalleryPictures/Pic3.JPG";
-import pic4 from "../assets/GalleryPictures/Pic4.JPG";
-import pic5 from "../assets/GalleryPictures/Pic5.JPG";
-import pic6 from "../assets/GalleryPictures/Pic6.JPG";
-import pic7 from "../assets/GalleryPictures/Pic7.JPG";
-import pic8 from "../assets/GalleryPictures/Pic8.JPG";
-import pic9 from "../assets/GalleryPictures/Pic9.JPG";
+import pic1 from "../assets/GalleryPictures/Pic1.webp";
+import pic2 from "../assets/GalleryPictures/Pic2.webp";
+import pic3 from "../assets/GalleryPictures/Pic3.webp";
+import pic4 from "../assets/GalleryPictures/Pic4.webp";
+import pic5 from "../assets/GalleryPictures/Pic5.webp";
+import pic6 from "../assets/GalleryPictures/Pic6.webp";
+import pic7 from "../assets/GalleryPictures/Pic7.webp";
+import pic8 from "../assets/GalleryPictures/Pic8.webp";
+import pic9 from "../assets/GalleryPictures/Pic9.webp";
 
-import team1 from "../assets/GalleryPictures/Pic17.JPG";
-import team2 from "../assets/GalleryPictures/Pic32.JPG";
-import team3 from "../assets/GalleryPictures/Pic64.JPG";
+import team1 from "../assets/GalleryPictures/Pic17.webp";
+import team2 from "../assets/GalleryPictures/Pic32.webp";
+import team3 from "../assets/GalleryPictures/Pic64.webp";
 
 type ProjectCategory =
   | "Wszystkie"
@@ -140,18 +140,22 @@ function RealisationsPage() {
           <img
             src={pic9}
             alt=""
+            width={900}
+            height={1200}
+            fetchPriority="high"
+            decoding="async"
             className="absolute inset-0 h-full w-full object-cover"
           />
 
           <div className="absolute inset-0 bg-linear-to-r from-gray-950 via-gray-950/85 to-gray-950/25" />
 
-          <div className="relative z-10 mx-auto w-full max-w-7xl px-6 pb-20 pt-36 lg:px-8 lg:pb-24">
+          <div className="relative z-10 mx-auto w-full max-w-7xl px-4 pb-14 pt-28 sm:px-6 sm:pb-20 sm:pt-36 lg:px-8 lg:pb-24">
             <div className="max-w-3xl">
               <p className="mb-5 border-l-2 border-red-600 pl-4 text-sm font-semibold uppercase tracking-[0.2em] text-red-500">
                 Nasze realizacje
               </p>
 
-              <h1 className="text-4xl font-bold leading-tight sm:text-5xl lg:text-7xl">
+              <h1 className="text-3xl font-bold leading-tight min-[380px]:text-4xl sm:text-5xl lg:text-7xl">
                 Dachy wykonane z dbałością o każdy detal.
               </h1>
 
@@ -164,7 +168,7 @@ function RealisationsPage() {
         </section>
 
         <section
-          className="px-6 py-20 lg:px-8 lg:py-28"
+          className="px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-28"
           aria-labelledby="realizacje-title"
         >
           <div className="mx-auto max-w-7xl">
@@ -184,7 +188,7 @@ function RealisationsPage() {
             </div>
 
             <div
-              className="mt-12 flex gap-3 overflow-x-auto border-b border-white/10 pb-4"
+              className="mt-10 flex gap-2 overflow-x-auto border-b border-white/10 pb-3 sm:mt-12 sm:gap-3 sm:pb-4"
               role="group"
               aria-label="Filtrowanie realizacji"
             >
@@ -211,7 +215,7 @@ function RealisationsPage() {
             </div>
 
             {visibleProjects.length > 0 ? (
-              <div className="mt-12 grid auto-rows-72 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              <div className="mt-10 grid auto-rows-64 gap-3 sm:mt-12 sm:auto-rows-72 sm:grid-cols-2 sm:gap-4 lg:grid-cols-3">
                 {visibleProjects.map((project) => (
                   <article
                     key={project.id}
@@ -224,6 +228,7 @@ function RealisationsPage() {
                       src={project.image}
                       alt={`${project.title} – ${project.category}`}
                       loading="lazy"
+                      decoding="async"
                       className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
                     />
 
@@ -250,16 +255,17 @@ function RealisationsPage() {
         </section>
 
         <section
-          className="bg-stone-100 px-6 py-20 text-gray-950 lg:px-8 lg:py-28"
+          className="bg-stone-100 px-4 py-16 text-gray-950 sm:px-6 sm:py-20 lg:px-8 lg:py-28"
           aria-labelledby="wyrozniona-realizacja"
         >
-          <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-2 lg:items-center lg:gap-20">
+          <div className="mx-auto grid max-w-7xl gap-8 sm:gap-12 lg:grid-cols-2 lg:items-center lg:gap-20">
             <div className="relative">
               <img
                 src={pic3}
                 alt="Detal wykonanego pokrycia dachowego"
                 loading="lazy"
-                className="h-96 w-full object-cover lg:h-136"
+                decoding="async"
+                className="h-72 w-full object-cover sm:h-96 lg:h-136"
               />
 
               <div className="absolute left-0 top-0 h-24 w-1 bg-red-600" />
@@ -308,7 +314,7 @@ function RealisationsPage() {
         </section>
 
         <section
-          className="px-6 py-20 lg:px-8 lg:py-28"
+          className="px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-28"
           aria-labelledby="team-heading"
         >
           <div className="mx-auto max-w-7xl">
@@ -333,7 +339,7 @@ function RealisationsPage() {
               </p>
             </div>
 
-            <div className="mt-12 grid gap-6 md:grid-cols-3">
+            <div className="mt-10 grid gap-5 sm:grid-cols-2 sm:gap-6 md:mt-12 lg:grid-cols-3">
               {team.map((item, index) => (
                 <article
                   key={item.title}
@@ -344,6 +350,7 @@ function RealisationsPage() {
                       src={item.image}
                       alt={item.alt}
                       loading="lazy"
+                      decoding="async"
                       className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
                     />
 
@@ -372,10 +379,8 @@ function RealisationsPage() {
           </div>
         </section>
       </main>
-
       <FooterComponent />
     </div>
   );
 }
-
 export default RealisationsPage;
