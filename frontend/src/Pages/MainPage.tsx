@@ -24,7 +24,7 @@ function MainPage() {
         <div className="absolute inset-0 bg-black/50" />
         <Navbar />
 
-        <div className="relative z-10 mx-auto flex min-h-[100svh] max-w-7xl items-center px-4 pb-12 pt-24 sm:px-6 sm:pb-16 lg:px-8">
+        <div className="relative z-10 mx-auto flex min-h-svh max-w-7xl items-center px-4 pb-12 pt-24 sm:px-6 sm:pb-16 lg:px-8">
           <div className="flex w-full max-w-xl flex-col items-start">
             <h1 className="text-left text-4xl font-bold uppercase leading-[1.08] text-white min-[380px]:text-5xl lg:text-6xl">
               Solidne dachy

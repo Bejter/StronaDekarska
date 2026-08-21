@@ -1,4 +1,4 @@
-import type { FormEvent } from "react";
+import { ValidationError, useForm } from "@formspree/react";
 
 import Navbar from "../Components/Navbar";
 import FooterComponent from "../Components/FooterComponent";
@@ -35,12 +35,12 @@ const contactSteps = [
 ];
 
 function ContactPage() {
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-
-    // Tutaj później podłączymy wysyłkę do API lub usługi formularzy.
-    console.log("Formularz jest gotowy do podłączenia");
-  };
+  const [formState, handleSubmit, resetForm] = useForm("meajnpdo", {
+    data: {
+      subject: "Nowe zapytanie ze strony Paweł Talarczyk Dachy",
+      source: "Formularz kontaktowy",
+    },
+  });
 
   return (
     <div className="min-h-screen bg-gray-950 text-white">
@@ -104,10 +104,44 @@ function ContactPage() {
                 Pola oznaczone gwiazdką są wymagane.
               </p>
 
-              <form
-                onSubmit={handleSubmit}
-                className="mt-8 grid gap-5 sm:mt-10 sm:grid-cols-2 sm:gap-6"
-              >
+              {formState.succeeded ? (
+                <div
+                  role="status"
+                  className="mt-8 border-l-4 border-green-600 bg-white p-6 sm:mt-10"
+                >
+                  <h3 className="text-xl font-bold text-gray-950">
+                    Dziękujemy za wiadomość.
+                  </h3>
+
+                  <p className="mt-3 leading-7 text-gray-600">
+                    Zapytanie zostało wysłane. Skontaktujemy się z Tobą po
+                    zapoznaniu się z jego treścią.
+                  </p>
+
+                  <button
+                    type="button"
+                    onClick={resetForm}
+                    className="mt-6 text-sm font-semibold uppercase tracking-wider text-red-600 transition-colors hover:text-red-700 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-red-600"
+                  >
+                    Wyślij kolejne zapytanie
+                  </button>
+                </div>
+              ) : (
+                <form
+                  onSubmit={handleSubmit}
+                  aria-busy={formState.submitting}
+                  className="mt-8 grid gap-5 sm:mt-10 sm:grid-cols-2 sm:gap-6"
+                >
+                  <div className="hidden" aria-hidden="true">
+                    <label htmlFor="companyWebsite">Strona internetowa</label>
+                    <input
+                      id="companyWebsite"
+                      name="_gotcha"
+                      type="text"
+                      tabIndex={-1}
+                      autoComplete="off"
+                    />
+                  </div>
                 <div>
                   <label
                     htmlFor="name"
@@ -123,6 +157,13 @@ function ContactPage() {
                     autoComplete="name"
                     required
                     className="min-h-12 w-full border border-gray-300 bg-white px-4 py-3 text-gray-950 outline-none transition focus:border-red-600 focus:ring-2 focus:ring-red-600/20"
+                  />
+
+                  <ValidationError
+                    field="name"
+                    prefix="Imię i nazwisko"
+                    errors={formState.errors}
+                    className="mt-2 text-sm text-red-600"
                   />
                 </div>
 
@@ -149,6 +190,13 @@ function ContactPage() {
                   >
                     Podaj sposób, w jaki możemy się z Tobą skontaktować.
                   </p>
+
+                  <ValidationError
+                    field="contact"
+                    prefix="Dane kontaktowe"
+                    errors={formState.errors}
+                    className="mt-2 text-sm text-red-600"
+                  />
                 </div>
 
                 <div>
@@ -210,6 +258,13 @@ function ContactPage() {
                     placeholder="Napisz krótko, jakich prac potrzebujesz i czego dotyczy inwestycja."
                     className="w-full resize-y border border-gray-300 bg-white px-4 py-3 text-gray-950 outline-none transition placeholder:text-gray-400 focus:border-red-600 focus:ring-2 focus:ring-red-600/20"
                   />
+
+                  <ValidationError
+                    field="message"
+                    prefix="Wiadomość"
+                    errors={formState.errors}
+                    className="mt-2 text-sm text-red-600"
+                  />
                 </div>
 
                 <div className="sm:col-span-2">
@@ -217,6 +272,7 @@ function ContactPage() {
                     <input
                       type="checkbox"
                       name="privacyConsent"
+                      value="Wyrażono zgodę"
                       required
                       className="mt-1 h-4 w-4 shrink-0 accent-red-600"
                     />
@@ -229,17 +285,26 @@ function ContactPage() {
                 </div>
 
                 <div className="sm:col-span-2">
+                  <ValidationError
+                    errors={formState.errors}
+                    className="mb-4 border border-red-300 bg-red-50 p-4 text-sm text-red-700"
+                  />
+
                   <button
                     type="submit"
-                    className="inline-flex min-h-13 w-full items-center justify-center bg-red-600 px-8 py-4 text-sm font-semibold uppercase tracking-wider text-white transition-colors hover:bg-red-700 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-red-600 sm:w-auto"
+                    disabled={formState.submitting}
+                    className="inline-flex min-h-13 w-full items-center justify-center bg-red-600 px-8 py-4 text-sm font-semibold uppercase tracking-wider text-white transition-colors hover:bg-red-700 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-red-600 disabled:cursor-not-allowed disabled:bg-gray-500 sm:w-auto"
                   >
-                    Wyślij zapytanie
-                    <span className="ml-3 text-lg" aria-hidden="true">
-                      →
-                    </span>
+                    {formState.submitting ? "Wysyłanie..." : "Wyślij zapytanie"}
+                    {!formState.submitting && (
+                      <span className="ml-3 text-lg" aria-hidden="true">
+                        →
+                      </span>
+                    )}
                   </button>
                 </div>
-              </form>
+                </form>
+              )}
             </div>
 
             <aside
