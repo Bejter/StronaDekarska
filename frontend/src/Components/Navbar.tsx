@@ -25,6 +25,12 @@ function Navbar() {
 
   return (
     <header className="absolute inset-x-0 top-0 z-50 border-b border-white/10 bg-slate-950/30 backdrop-blur-sm">
+      <a
+        href="#main-content"
+        className="fixed left-4 top-4 z-[100] -translate-y-24 bg-white px-4 py-3 font-semibold text-gray-950 transition-transform focus:translate-y-0"
+      >
+        Przejdź do treści
+      </a>
       <nav className="mx-auto flex h-18 max-w-7xl items-center justify-between gap-3 px-4 sm:h-20 sm:px-6 lg:px-8">
         <Link
           to="/"
@@ -56,11 +62,11 @@ function Navbar() {
         </div>
 
         <a
-          href="tel:+48533983555"
+          href="tel:+48664983540"
           className="hidden items-center gap-3 text-sm font-bold text-white lg:flex"
         >
-          <span className="text-lg text-red-500">☎</span>
-          <span>533 983 555</span>
+          <span className="text-lg text-red-500" aria-hidden="true">☎</span>
+          <span>664 983 540</span>
         </a>
 
         <button
@@ -77,6 +83,7 @@ function Navbar() {
 
       <div
         id="mobile-menu"
+        aria-hidden={!isMenuOpen}
         className={`overflow-hidden border-t border-white/10 bg-gray-950/98 transition-[max-height,opacity] duration-300 lg:hidden ${
           isMenuOpen
             ? "max-h-128 opacity-100"
@@ -95,6 +102,7 @@ function Navbar() {
                 key={item.label}
                 to={item.href}
                 aria-current={isActive ? "page" : undefined}
+                tabIndex={isMenuOpen ? 0 : -1}
                 onClick={() => setIsMenuOpen(false)}
                 className={`flex min-h-13 items-center border-b border-white/10 text-sm font-semibold uppercase tracking-wide transition-colors last:border-b-0 ${
                   isActive ? "text-red-500" : "text-white/85 hover:text-red-500"
@@ -106,10 +114,11 @@ function Navbar() {
           })}
 
           <a
-            href="tel:+48533983555"
+            href="tel:+48664983540"
+            tabIndex={isMenuOpen ? 0 : -1}
             className="mt-4 flex min-h-12 items-center justify-center bg-red-600 px-6 text-sm font-bold text-white transition-colors hover:bg-red-700 md:hidden"
           >
-            Zadzwoń: 533 983 555
+            Zadzwoń: 664 983 540
           </a>
         </nav>
       </div>

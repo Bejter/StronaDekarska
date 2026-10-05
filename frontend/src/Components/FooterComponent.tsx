@@ -27,10 +27,10 @@ function FooterComponent({ hideContactCta }: FooterComponentProps) {
 
             <div className="flex flex-col gap-4 sm:flex-row sm:items-center lg:flex-col lg:items-end">
               <a
-                href="tel:+48533983555"
+                href="tel:+48664983540"
                 className="text-2xl font-bold text-gray-950 transition-colors hover:text-red-600 sm:text-3xl md:text-4xl"
               >
-                533 983 555
+                664 983 540
               </a>
 
               <a
@@ -38,7 +38,9 @@ function FooterComponent({ hideContactCta }: FooterComponentProps) {
                 className="inline-flex items-center justify-center bg-red-600 px-7 py-4 text-sm font-semibold uppercase tracking-wider text-white transition-colors hover:bg-red-700"
               >
                 Przejdź do kontaktu
-                <span className="ml-3 text-lg">→</span>
+                <span className="ml-3 text-lg" aria-hidden="true">
+                  →
+                </span>
               </a>
             </div>
           </div>
@@ -128,20 +130,23 @@ function FooterComponent({ hideContactCta }: FooterComponentProps) {
 
             <address className="mt-6 flex flex-col items-start gap-4 not-italic">
               <a
-                href="tel:+48533983555"
+                href="tel:+48664983540"
                 className="text-gray-400 transition-colors hover:text-red-500"
               >
-                533 983 555
+                664 983 540
               </a>
 
               <a
-                href="mailto:biuro.talarczykp@gmail.com"
+                href="mailto:biuro.talarczykd@gmail.com"
                 className="text-gray-400 transition-colors hover:text-red-500"
               >
-                biuro.talarczykp@gmail.com
+                biuro.talarczykd@gmail.com
               </a>
 
-              <p className="text-gray-400">Podłopień 64, 34-650 Tymbark</p>
+              <p className="text-gray-400">
+                Podłopień 64, 34-650 Tymbark
+                <span className="mt-1 block">Obszar działania: Małopolska</span>
+              </p>
             </address>
           </div>
           <div>

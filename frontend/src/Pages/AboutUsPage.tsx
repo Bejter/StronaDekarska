@@ -44,7 +44,7 @@ function AboutUsPage() {
     <div className="min-h-screen bg-gray-950 text-white">
       <Navbar />
 
-      <main>
+      <main id="main-content" tabIndex={-1}>
         <section className="relative flex min-h-[70svh] items-end overflow-hidden sm:min-h-[72vh]">
           <img
             src={heroImage}
@@ -70,7 +70,7 @@ function AboutUsPage() {
 
               <p className="mt-7 max-w-2xl text-lg leading-8 text-gray-300">
                 Paweł Talarczyk Dachy to 15 lat doświadczenia w realizacji prac
-                dekarskich i ciesielskich na terenie Krakowa i okolic.
+                dekarskich i ciesielskich na terenie Małopolski.
               </p>
             </div>
           </div>
@@ -131,10 +131,10 @@ function AboutUsPage() {
               <div className="mt-8 grid gap-5 border-t border-white/10 pt-8 sm:grid-cols-2">
                 <div>
                   <strong className="block text-2xl font-bold text-white">
-                    Kraków
+                    Małopolska
                   </strong>
                   <span className="mt-1 block text-sm text-gray-400">
-                    i okolice
+                    obszar działania
                   </span>
                 </div>
 
@@ -214,7 +214,7 @@ function AboutUsPage() {
 
               <p className="mt-5 text-lg leading-8 text-gray-400">
                 Obsługujemy nowe realizacje, wymiany i remonty dachów, a także
-                wymagające prace przy krakowskich kamienicach.
+                wymagające prace przy kamienicach.
               </p>
             </div>
 

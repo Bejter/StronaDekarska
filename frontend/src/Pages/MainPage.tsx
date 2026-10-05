@@ -9,7 +9,11 @@ import FooterComponent from "../Components/FooterComponent";
 function MainPage() {
   return (
     <main className="bg-gray-950">
-      <section id="strona-glowna" className="relative  min-h-screen ">
+      <section
+        id="main-content"
+        tabIndex={-1}
+        className="relative min-h-screen"
+      >
         <picture>
           <source media="(min-width: 768px)" srcSet={heroRoofDesktop} />
           <img

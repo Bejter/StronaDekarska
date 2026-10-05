@@ -46,7 +46,7 @@ function ContactPage() {
     <div className="min-h-screen bg-gray-950 text-white">
       <Navbar />
 
-      <main>
+      <main id="main-content" tabIndex={-1}>
         <section className="relative min-h-[65vh] overflow-hidden">
           <div className="grid min-h-[65vh] lg:grid-cols-2">
             <div className="relative z-10 flex items-end bg-gray-950 px-4 pb-14 pt-28 sm:px-6 sm:pb-20 sm:pt-36 lg:px-8 lg:pb-24">
@@ -61,7 +61,7 @@ function ContactPage() {
 
                 <p className="mt-7 max-w-xl text-lg leading-8 text-gray-300">
                   Opowiedz nam o planowanej budowie, wymianie lub remoncie
-                  dachu. Działamy na terenie Krakowa i okolic.
+                  dachu. Działamy na terenie Małopolski.
                 </p>
               </div>
             </div>
@@ -156,15 +156,18 @@ function ContactPage() {
                     type="text"
                     autoComplete="name"
                     required
+                    aria-describedby="name-error"
                     className="min-h-12 w-full border border-gray-300 bg-white px-4 py-3 text-gray-950 outline-none transition focus:border-red-600 focus:ring-2 focus:ring-red-600/20"
                   />
 
-                  <ValidationError
-                    field="name"
-                    prefix="Imię i nazwisko"
-                    errors={formState.errors}
-                    className="mt-2 text-sm text-red-600"
-                  />
+                  <div id="name-error">
+                    <ValidationError
+                      field="name"
+                      prefix="Imię i nazwisko"
+                      errors={formState.errors}
+                      className="mt-2 text-sm text-red-600"
+                    />
+                  </div>
                 </div>
 
                 <div>
@@ -180,7 +183,7 @@ function ContactPage() {
                     name="contact"
                     type="text"
                     required
-                    aria-describedby="contact-help"
+                    aria-describedby="contact-help contact-error"
                     className="min-h-12 w-full border border-gray-300 bg-white px-4 py-3 text-gray-950 outline-none transition focus:border-red-600 focus:ring-2 focus:ring-red-600/20"
                   />
 
@@ -191,12 +194,14 @@ function ContactPage() {
                     Podaj sposób, w jaki możemy się z Tobą skontaktować.
                   </p>
 
-                  <ValidationError
-                    field="contact"
-                    prefix="Dane kontaktowe"
-                    errors={formState.errors}
-                    className="mt-2 text-sm text-red-600"
-                  />
+                  <div id="contact-error">
+                    <ValidationError
+                      field="contact"
+                      prefix="Dane kontaktowe"
+                      errors={formState.errors}
+                      className="mt-2 text-sm text-red-600"
+                    />
+                  </div>
                 </div>
 
                 <div>
@@ -255,16 +260,19 @@ function ContactPage() {
                     name="message"
                     rows={7}
                     required
+                    aria-describedby="message-error"
                     placeholder="Napisz krótko, jakich prac potrzebujesz i czego dotyczy inwestycja."
                     className="w-full resize-y border border-gray-300 bg-white px-4 py-3 text-gray-950 outline-none transition placeholder:text-gray-400 focus:border-red-600 focus:ring-2 focus:ring-red-600/20"
                   />
 
-                  <ValidationError
-                    field="message"
-                    prefix="Wiadomość"
-                    errors={formState.errors}
-                    className="mt-2 text-sm text-red-600"
-                  />
+                  <div id="message-error">
+                    <ValidationError
+                      field="message"
+                      prefix="Wiadomość"
+                      errors={formState.errors}
+                      className="mt-2 text-sm text-red-600"
+                    />
+                  </div>
                 </div>
 
                 <div className="sm:col-span-2">
@@ -286,6 +294,7 @@ function ContactPage() {
 
                 <div className="sm:col-span-2">
                   <ValidationError
+                    role="alert"
                     errors={formState.errors}
                     className="mb-4 border border-red-300 bg-red-50 p-4 text-sm text-red-700"
                   />
@@ -359,7 +368,7 @@ function ContactPage() {
 
                 <h2 className="mt-6 text-xl font-bold">Obszar działania</h2>
 
-                <strong className="mt-3 block text-lg">Kraków i okolice</strong>
+                <strong className="mt-3 block text-lg">Małopolska</strong>
 
                 <p className="mt-3 leading-7 text-gray-600">
                   Skontaktuj się z nami, aby ustalić możliwość realizacji prac w

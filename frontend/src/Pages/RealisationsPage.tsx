@@ -135,7 +135,7 @@ function RealisationsPage() {
     <div className="min-h-screen bg-gray-950 text-white">
       <Navbar />
 
-      <main>
+      <main id="main-content" tabIndex={-1}>
         <section className="relative flex min-h-[62vh] items-end overflow-hidden">
           <img
             src={pic9}
@@ -161,7 +161,7 @@ function RealisationsPage() {
 
               <p className="mt-7 max-w-2xl text-lg leading-8 text-gray-300">
                 Zobacz wybrane prace dekarskie i ciesielskie zrealizowane w
-                Krakowie oraz okolicach.
+                Małopolsce.
               </p>
             </div>
           </div>
@@ -184,7 +184,7 @@ function RealisationsPage() {
                 Zobacz efekty naszej pracy.
               </h2>
 
-              <p className="mt-4 text-gray-400">Kraków i okolice</p>
+              <p className="mt-4 text-gray-400">Małopolska</p>
             </div>
 
             <div

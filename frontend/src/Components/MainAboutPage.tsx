@@ -115,7 +115,6 @@ function MainAboutPage() {
             lat gwarancji
           </span>
         </div>
-
         <div className="px-4 py-8">
           <strong className="block text-3xl font-bold text-white sm:text-4xl">100%</strong>
           <span className="mt-2 block text-xs uppercase tracking-wider text-gray-400">
