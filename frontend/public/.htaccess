@@ -1,0 +1,10 @@
+# Serve React pages on direct visits and refreshes.
+# Existing files and directories are handled by the web server as usual.
+RewriteEngine On
+
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# Keep unknown URLs and missing assets as real 404 responses.
+RewriteRule ^(o-nas|realizacje|kontakt|polityka-prywatnosci)/?$ $1.html [L]

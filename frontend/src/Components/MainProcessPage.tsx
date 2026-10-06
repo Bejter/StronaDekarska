@@ -61,7 +61,7 @@ function MainWorkProcess() {
                 <h3 className="mt-6 text-2xl font-bold"> {step.title} </h3>
                 <p className="mt-3 max-w-xs leading-7 text-gray-600">
                   {" "}
-                  4{step.description}{" "}
+                  {step.description}{" "}
                 </p>
               </article>
             ))}

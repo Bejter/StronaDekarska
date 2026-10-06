@@ -1,4 +1,7 @@
 import { ValidationError, useForm } from "@formspree/react";
+import { useState } from "react";
+import type { FormEvent } from "react";
+import { contactValidationMessage } from "../contactValidation";
 
 import Navbar from "../Components/Navbar";
 import FooterComponent from "../Components/FooterComponent";
@@ -35,12 +38,32 @@ const contactSteps = [
 ];
 
 function ContactPage() {
+  const [contactError, setContactError] = useState("");
   const [formState, handleSubmit, resetForm] = useForm("meajnpdo", {
     data: {
       subject: "Nowe zapytanie ze strony Paweł Talarczyk Dachy",
       source: "Formularz kontaktowy",
     },
   });
+
+  function validateContact(input: HTMLInputElement) {
+    const error = contactValidationMessage(input.value);
+    input.setCustomValidity(error);
+    setContactError(error);
+    return !error;
+  }
+
+  function submitContact(event: FormEvent<HTMLFormElement>) {
+    const input = event.currentTarget.elements.namedItem("contact") as HTMLInputElement;
+    input.value = input.value.trim();
+    if (!validateContact(input)) {
+      event.preventDefault();
+      input.reportValidity();
+      input.focus();
+      return;
+    }
+    void handleSubmit(event);
+  }
 
   return (
     <div className="min-h-screen bg-gray-950 text-white">
@@ -128,7 +151,7 @@ function ContactPage() {
                 </div>
               ) : (
                 <form
-                  onSubmit={handleSubmit}
+                  onSubmit={submitContact}
                   aria-busy={formState.submitting}
                   className="mt-8 grid gap-5 sm:mt-10 sm:grid-cols-2 sm:gap-6"
                 >
@@ -183,6 +206,17 @@ function ContactPage() {
                     name="contact"
                     type="text"
                     required
+                    maxLength={254}
+                    autoCapitalize="none"
+                    spellCheck={false}
+                    placeholder="664 983 540 lub jan@example.pl"
+                    aria-invalid={contactError ? true : undefined}
+                    onBlur={(event) => validateContact(event.currentTarget)}
+                    onChange={(event) => {
+                      event.currentTarget.setCustomValidity("");
+                      setContactError("");
+                    }}
+                    onInvalid={(event) => validateContact(event.currentTarget)}
                     aria-describedby="contact-help contact-error"
                     className="min-h-12 w-full border border-gray-300 bg-white px-4 py-3 text-gray-950 outline-none transition focus:border-red-600 focus:ring-2 focus:ring-red-600/20"
                   />
@@ -195,6 +229,9 @@ function ContactPage() {
                   </p>
 
                   <div id="contact-error">
+                    {contactError && (
+                      <p role="alert" className="mt-2 text-sm text-red-600">{contactError}</p>
+                    )}
                     <ValidationError
                       field="contact"
                       prefix="Dane kontaktowe"
@@ -287,7 +324,15 @@ function ContactPage() {
 
                     <span className="text-sm leading-6 text-gray-600">
                       Wyrażam zgodę na wykorzystanie podanych danych w celu
-                      udzielenia odpowiedzi na moje zapytanie. *
+                      udzielenia odpowiedzi na moje zapytanie. *{" "}
+                      <a
+                        href="/polityka-prywatnosci"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="font-semibold text-red-700 underline underline-offset-4 hover:text-red-800"
+                      >
+                        Informacja o prywatności (nowa karta)
+                      </a>
                     </span>
                   </label>
                 </div>

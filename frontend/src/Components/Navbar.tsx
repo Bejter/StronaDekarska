@@ -65,7 +65,9 @@ function Navbar() {
           href="tel:+48664983540"
           className="hidden items-center gap-3 text-sm font-bold text-white lg:flex"
         >
-          <span className="text-lg text-red-500" aria-hidden="true">☎</span>
+          <span className="text-lg text-red-500" aria-hidden="true">
+            ☎
+          </span>
           <span>664 983 540</span>
         </a>
 
@@ -116,7 +118,7 @@ function Navbar() {
           <a
             href="tel:+48664983540"
             tabIndex={isMenuOpen ? 0 : -1}
-            className="mt-4 flex min-h-12 items-center justify-center bg-red-600 px-6 text-sm font-bold text-white transition-colors hover:bg-red-700 md:hidden"
+            className="mt-4 flex min-h-12 items-center justify-center bg-red-600 px-6 text-sm font-bold text-white transition-colors hover:bg-red-700 lg:hidden"
           >
             Zadzwoń: 664 983 540
           </a>

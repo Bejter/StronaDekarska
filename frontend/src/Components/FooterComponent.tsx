@@ -71,16 +71,20 @@ function FooterComponent({ hideContactCta }: FooterComponentProps) {
 
             <div className="mt-6 flex gap-3">
               <a
-                href="#"
-                aria-label="Facebook"
+                href="https://www.facebook.com/profile.php?id=61592836629797&locale=pl_PL"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook — otwiera się w nowej karcie"
                 className="flex h-10 w-10 items-center justify-center border border-white/20 text-sm font-bold text-gray-300 transition-colors hover:border-red-600 hover:bg-red-600 hover:text-white"
               >
                 f
               </a>
 
               <a
-                href="#"
-                aria-label="Instagram"
+                href="https://www.instagram.com/talarczyk_dachy/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram — otwiera się w nowej karcie"
                 className="flex h-10 w-10 items-center justify-center border border-white/20 text-sm font-bold text-gray-300 transition-colors hover:border-red-600 hover:bg-red-600 hover:text-white"
               >
                 ig
@@ -180,7 +184,10 @@ function FooterComponent({ hideContactCta }: FooterComponentProps) {
             </p>
 
             <div className="flex flex-wrap items-center gap-6">
-              <a href="#" className="transition-colors hover:text-red-500">
+              <a
+                href="/polityka-prywatnosci"
+                className="transition-colors hover:text-red-500"
+              >
                 Polityka prywatności
               </a>
 
